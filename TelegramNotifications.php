@@ -37,10 +37,14 @@ class TelegramNotifications extends Component
     /**
      * Послать просто сообщение
      * @param string $message
+     * @param integer|null $chatId Force chat id
      * @return bool
      */
-    public function sendMessage($message):bool
+    public function sendMessage($message, $chatId = null):bool
     {
+        if ($chatId !== null) {
+            $this->chat = $chatId;
+        }
         $this->_message = $message;
         return $this->query('sendMessage');
     }

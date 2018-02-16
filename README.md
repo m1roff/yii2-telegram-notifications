@@ -30,3 +30,13 @@ add this lines to your project config file
 ],
 
 ```
+
+
+
+# HOW
+
+## How to find out my user`s Id ot chat id?
+
+* send message to the bot
+* Look at last updates at `https://api.telegram.org/bot{BOT_TOKEN}/getUpdates`
+* {BOT_TOKEN} - replace with your bot token
