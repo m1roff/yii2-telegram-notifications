@@ -22,6 +22,15 @@ class TelegramNotifications extends Component
     /** @var int Id чата для получения сообщения */
     public $chat;
 
+    /** @var array Теги которые можно использовать в сообщении */
+    public $stripTags = [
+        '<i>',
+        '<b>',
+        '<a>',
+        '<code>',
+        '<pre>',
+    ];
+
     private $url = 'https://api.telegram.org/bot';
     private $_message;
 
@@ -45,8 +54,18 @@ class TelegramNotifications extends Component
         if ($chatId !== null) {
             $this->chat = $chatId;
         }
-        $this->_message = $message;
+        $this->setMessage($message);
         return $this->query('sendMessage');
+    }
+
+    /**
+     * Отсылаемое сообщение.
+     * Очищаются html теги
+     * @param string $message
+     */
+    public function setMessage($message)
+    {
+        $this->_message = strip_tags($message, implode('', $this->stripTags));
     }
 
     /**
