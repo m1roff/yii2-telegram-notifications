@@ -21,6 +21,9 @@ class TelegramNotifications extends Component
 
     /** @var int Id чата для получения сообщения */
     public $chat;
+    
+    /** @var null Дополнительный загаловок, высылаться будет всем. Например, для тестового сервера */
+    public $extraTitle = null;
 
     /** @var array Теги которые можно использовать в сообщении */
     public $stripTags = [
@@ -65,6 +68,7 @@ class TelegramNotifications extends Component
      */
     public function setMessage($message)
     {
+        $message = $this->extraTitle . $message;
         $this->_message = strip_tags($message, implode('', $this->stripTags));
     }
 
