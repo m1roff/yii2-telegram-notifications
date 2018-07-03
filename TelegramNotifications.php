@@ -22,6 +22,9 @@ class TelegramNotifications extends Component
     /** @var int Id чата для получения сообщения */
     public $chat;
     
+    /** @var null|string Example: socks5://LOGIN:PASS@PROXY_ADDRESS:PROXY_PORT */
+    public $proxy = null;
+    
     /** @var null Дополнительный загаловок, высылаться будет всем. Например, для тестового сервера */
     public $extraTitle = null;
 
@@ -80,6 +83,10 @@ class TelegramNotifications extends Component
     private function query($route)
     {
         $cmd = ['curl -X POST'];
+        if (!empty($this->proxy)) {
+            $cmd[] = '--proxy';
+            $cmd[] = $this->proxy;
+        }
         $cmd[] = '--data';
         $cmd[] = '"' . $this->genQuery() . '"';
         $cmd[] = $this->genUrl($route);
