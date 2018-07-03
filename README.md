@@ -26,6 +26,8 @@ add this lines to your project config file
         'class' => \mirkhamidov\TelegramNotifications::class,
         'token' => ***', // Token of your bot
         'chat' => ***, // Notifications chat id
+        'extraTitle' => "⚠️⚠️⚠️ Some extra title added to message⚠️⚠️⚠️\n", // optional
+        'proxy' => 'socks5://LOGIN:PASS@PROXY_ADDRESS:PROXY_PORT', // optional, if needed to use proxy, like in Russia
     ],
 ],
 
