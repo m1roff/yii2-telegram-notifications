@@ -1,6 +1,6 @@
 <?php
 
-namespace mirkhamidov;
+namespace m1roff;
 
 
 use Yii;

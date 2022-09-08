@@ -9,7 +9,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```bash
-composer require mirkhamidov/yii2-telegram-notifications "dev-master"
+composer require m1roff/yii2-telegram-notifications "dev-master"
 ```
 
 
@@ -23,7 +23,7 @@ add this lines to your project config file
 'components' => [
     ...,
     'telegram' => [
-        'class' => \mirkhamidov\TelegramNotifications::class,
+        'class' => \m1roff\TelegramNotifications::class,
         'token' => ***', // Token of your bot
         'chat' => ***, // Notifications chat id
         'extraTitle' => "⚠️⚠️⚠️ Some extra title added to message⚠️⚠️⚠️\n", // optional

@@ -1,5 +1,5 @@
 {
-  "name": "mirkhamidov/yii2-telegram-notifications",
+  "name": "m1roff/yii2-telegram-notifications",
   "description": "Telegram Notifications",
   "keywords": ["yii2", "telegram"],
   "type": "yii2-extension",
@@ -11,7 +11,7 @@
   },
   "autoload": {
     "psr-4": {
-      "mirkhamidov\\": ""
+      "m1roff\\": ""
     }
   }
 }
